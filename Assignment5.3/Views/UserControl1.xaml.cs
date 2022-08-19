@@ -35,17 +35,17 @@ namespace Assignment5._3.Views
             var pass = password.Password;
             if((user == "Teacher") && (pass == "Admin"))
             {
+                userName.Text = null;
+                password.Password = null;
                 LogonSuccess(this, null);
-                return;
+                return;                
             }
             else
             {
                 LogonFailure(this, null);
             }
-            
-            
-            
-
+            userName.Text = null;
+            password.Password = null;   
         }
     }
 }

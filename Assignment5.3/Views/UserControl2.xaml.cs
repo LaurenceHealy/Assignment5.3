@@ -28,6 +28,7 @@ namespace Assignment5._3.Views
 
         public List<Student> sortStudents = new List<Student>();
         public ObservableCollection<Student> students = new ObservableCollection<Student>(); 
+        
         public UserControl2()
         {
             InitializeComponent();
@@ -62,6 +63,10 @@ namespace Assignment5._3.Views
             students.Add(new Student() { FirstName = FirstName.Text, LastName = LastName.Text, StudentId = StudentID.Text, StudentGpa = StudentGPA.Text });
             studentList.ItemsSource = students;
             CollectionViewSource.GetDefaultView(studentList.ItemsSource).Refresh();
+            FirstName.Text = null;
+            LastName.Text = null;
+            StudentID.Text = null;
+            StudentGPA.Text = null;
         }
         #endregion
 
@@ -110,6 +115,8 @@ namespace Assignment5._3.Views
             {
                 student.ReportWriter();
             }
+            MessageBox.Show("File Saved", "Your report has been saved", MessageBoxButton.OK, MessageBoxImage.Information);
+            
         }
        
     }
